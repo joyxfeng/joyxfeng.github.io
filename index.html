@@ -6,20 +6,119 @@
 <meta charset="UTF-8">
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700|Open+Sans:400,400i" rel="stylesheet">
 <style type="text/css">
-	h1 {font-family: 'Lora', serif; margin-left: 70px;}
-	p {font-family: 'Open Sans', sans-serif; margin-left: 70px;}
-	img {margin-left: 70px; margin-bottom: 20px;}
-	a {margin-left: 70px;}
+	h1 {
+		font-family: 'Lora', serif; 
+		font-weight: normal;
+		margin-left: 70px;
+	}
+	h2 {
+		font-family: 'Open Sans', sans-serif; 
+		font-weight: normal;
+		margin-left: 70px;
+		font-size: 18px;
+	}
+	h3 {
+		font-family: 'Open Sans', sans-serif; 
+		margin-left: 20px;
+		font-size: 16px;
+	}
+	h4{
+		font-family: font-family: 'Open Sans', sans-serif; 
+		margin-left: 20px;
+		font-size:14px;
+		font-weight: bold;
+	}
+	p {
+		font-family: 'Open Sans', sans-serif; 
+		margin-left: 20px;
+	}
+	img {
+		margin-left: 20px; 
+		margin-bottom: 20px;
+		margin-top: 20px}
+	a {
+		color: #300096;
+		text-decoration: none;
+	}
+
+	.tab { 
+    overflow: hidden;
+    background-color: #f1f1f1;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 20px;
+	}
+
+    .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    margin: 10px;
+	}
+
+	.tab button:hover {
+    background-color: #cccccc;
+	}
+
+	.tab button.active {
+    background-color: #d8e7ff;
+	}
+
+	.tabcontent {
+    display: none;
+    margin-left: 70px;
+    margin-right: 70px;
+    font-family: 'Open Sans', sans-serif;
+	}
+
 </style>
 </head>
 
 <body>
+	<h1>Joy Feng</h1>
+	<h2>I'm a first-year undergraduate student at MIT.</h2>
 
-<h1>Welcome to my website!</h1>
-<p>I'm Joy and I'm a first-year undergraduate student at MIT.</p>
-<img src="jfeng.jpg" alt="Hello!" width="375" height="240"> <br>
-<a href="linkedin.com/in/joyxfeng">Linkedin <br></a>
+	<div class="tab">
+		<button class="tablinks" onclick="openPage(event, 'Resume')">Resume</button>
+		<button class="tablinks" onclick="openPage(event, 'Projects')">Projects</button>
+		<button class="tablinks" onclick="openPage(event, 'About Me')">About Me</button>
+	</div>
 
+	<div id="Resume" class="tabcontent">
+ 	<h3>Resume</h3>
+ 	<p><a href="http://linkedin.com/in/joyxfeng">Linkedin</a> profile</p>
+ 	</div>
+
+ 	<div id="Projects" class="tabcontent">
+ 	<h3>Projects</h3>
+ 	<p>You're looking at one of them right now! This website is built from scratch using HTML, CSS, and a little bit of Javascript.</p>
+ 	</div>
+
+	<div id="About Me" class="tabcontent">
+ 	<h3>About Me</h3>
+ 	<img src="jfeng.jpg" alt="Hello!" width="375" height="240"> <br>
+ 	<p>Hello and welcome to my website! I'm Joy, a student in the MIT class of 2022. I grew up in the warmth of San Jose, California, but am now currently freezing in the winter of Cambridge, Massachusetts.</p>
+	<p>I like studying math, economics, computer science, music, French, and art history and a lot of other things. I also love traveling, dance, calligraphy, cooking, and classical music. If you want to check out my life as a student (pictures of my notes, little studying tips, etc.), please click <a href="http://joystudie.tumblr.com">this link</a> to my studyblr!</p>
+	<p>I'm a choreographer for MIT's <a href="http://adt.mit.edu/">"Asian Dance Team"</a>, as well as a member of the Boston-based pre-professional dance group, <a href="http://www.dancerevelasian.com/">"Dance Revelasian"</a>. In addition, I am a cellist in the MIT Symphony orchestra, and a member of the Undergraduate Association's Innovation and Marketing committees.</p>
+ 	</div>
+
+ 	<script>
+	function openPage(evt, PageName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {tabcontent[i].style.display = "none";}
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {tablinks[i].className = tablinks[i].className.replace(" active", "");}
+    document.getElementById(PageName).style.display = "block";
+    evt.currentTarget.className += " active";
+	}
+	</script>
 
 </body>
 </html>
